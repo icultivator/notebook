@@ -93,7 +93,8 @@ return array(
 			'1'=>'PHP',
 			'2'=>'Yii',
 			'3'=>'MySQL',
-			'4'=>'Others'
+            '4'=>'Redis',
+			'5'=>'Others'
 		)
 	),
 );
