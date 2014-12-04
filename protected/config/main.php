@@ -35,6 +35,7 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+			'loginUrl'=>array('/user/login')
 		),
 		// uncomment the following to enable URLs in path-format
 		
@@ -57,7 +58,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=test',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => '123456',
 			'charset' => 'utf8',
 			'tablePrefix'=>'yjb_'
 		),
@@ -91,7 +92,8 @@ return array(
 		'category'=>array(
 			'1'=>'PHP',
 			'2'=>'Yii',
-			'3'=>'Others'
+			'3'=>'MySQL',
+			'4'=>'Others'
 		)
 	),
 );

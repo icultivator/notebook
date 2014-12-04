@@ -46,7 +46,7 @@ class Note extends CActiveRecord
 			array('title, content,cat_id', 'required'),
 			array('cat_id, status', 'numerical', 'integerOnly'=>true),
 			array('title, cover, tags', 'length', 'max'=>100),
-			array('votes', 'length', 'max'=>2),
+			array('votes', 'numerical'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, cat_id, title, cover, summary, content, tags, views, votes, status, user_id, create_time, publish_time, last_update', 'safe', 'on'=>'search'),
@@ -137,14 +137,18 @@ class Note extends CActiveRecord
 
 	public function beforeSave(){
 		if($this->isNewRecord){
-			$this->create_time = $this->update_time = time();
+			$this->create_time = $this->last_update = time();
 			$this->user_id = Yii::app()->user->id;
 		}
 		if($this->scenario=='update'){
-			$this->update_time = time();
+			$this->last_update  = time();
 		}
 		if($this->scenario=='publish'){
-			$this->post_time = time();
+			$this->publish_time = time();
+			$this->status = self::PUBLISHED;
+		}
+		if($this->scenario=='draft'){
+			$this->status==self::DRAFT;
 		}
 	}
 

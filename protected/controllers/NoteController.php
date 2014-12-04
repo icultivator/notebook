@@ -70,14 +70,14 @@ class NoteController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Note;
+		$model = new Note;
 
 		if(isset($_POST['publish'])){
-			$this->setScenario('publish');
+			$model->setScenario('publish');
 		}
 
 		if(isset($_POST['draft'])){
-			$this->setScenario('draft');
+			$model->setScenario('draft');
 		}
 
 		// Uncomment the following line if AJAX validation is needed

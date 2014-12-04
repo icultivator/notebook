@@ -40,7 +40,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'content'); ?>
-		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textArea($model,'content',array('rows'=>15, 'cols'=>60)); ?>
 		<?php echo $form->error($model,'content'); ?>
 	</div>
 

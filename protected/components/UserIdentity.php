@@ -8,7 +8,7 @@
 class UserIdentity extends CUserIdentity
 {
 
-	private $_id;
+	private $id;
 
 	/**
 	 * Authenticates a user.
@@ -27,13 +27,13 @@ class UserIdentity extends CUserIdentity
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		else{
 			$this->errorCode=self::ERROR_NONE;
-			$this->_id = $user->id;
+			$this->id = $user->id;
 			$this->setState('avatar',$user->avatar);
 		}
 		return !$this->errorCode;
 	}
 
 	public function getId(){
-		return $this->_id;
+		return $this->id;
 	}
 }
